@@ -4,4 +4,16 @@
 
 body {
   overscroll-behavior: contain;
+  background-color: black;
+}
+.bg-white{
+  background-color: black;
+}
+
+.bg-gray-300{
+  background-color: black;
+}
+
+.text-xs{
+  color: yellow;
 }
