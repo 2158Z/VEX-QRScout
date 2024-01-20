@@ -5,9 +5,6 @@
     "Config": {
       "type": "object",
       "properties": {
-        "$schema": {
-          "type": "string"
-        },
         "title": {
           "type": "string"
         },
@@ -30,10 +27,6 @@
         "name": {
           "type": "string"
         },
-        "preserveDataOnReset": {
-          "type": "boolean",
-          "description": "If true, field data will not be cleared when the scouting form is reset."
-        },
         "fields": {
           "type": "array",
           "items": {
@@ -46,6 +39,10 @@
     },
     "InputProps": {
       "type": "object",
+      "preserveDataOnReset": {
+        "type": "boolean",
+        "description": "If true, field data will not be cleared when the scouting form is reset."
+      },
       "properties": {
         "title": {
           "type": "string"

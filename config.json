@@ -1,0 +1,216 @@
+{
+    "$schema": "../schema.json",
+    "title": "VEX QRScout",
+    "page_title": "Over Under",
+    "sections": [
+      {
+        "name": "Prematch",
+        "preserveDataOnReset": true,
+        "fields": [
+          {
+            "title": "Scouter Name",
+            "type": "text",
+            "required": true,
+            "code": "scouter"
+          },
+          {
+            "title": "Match Number",
+            "type": "number",
+            "required": true,
+            "code": "matchNumber"
+          },
+          {
+            "title": "Robot",
+            "type": "select",
+            "required": true,
+            "code": "robot",
+            "choices": {
+              "R1": "Red 1",
+              "R2": "Red 2",
+              "B1": "Blue 1",
+              "B2": "Blue 2"
+            },
+            "defaultValue": "R1"
+          },
+          {
+            "title": "Team",
+            "type": "text",
+            "required": true,
+            "code": "teamNumber"
+          },
+          {
+            "title": "No Show",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false,
+            "code": "noShow"
+          }
+        ]
+      },
+      {
+        "name": "Autonomous",
+        "fields": [
+          {
+            "code": "aumscore",
+            "title": "Match Load Scored",
+            "type": "boolean",
+            "defaultValue": false,
+            "min": false,
+            "required": false
+          },
+          {
+            "code": "auscore",
+            "title": "Auton Score",
+            "type": "counter",
+            "defaultValue": 0,
+            "min": 0,
+            "required": false
+          },
+          {
+            "code": "auf",
+            "title": "Auton Foul/DQ",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "Teleop",
+        "fields": [
+          {
+            "code": "tcoop",
+            "title": "Disabled",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          },
+          {
+            "code": "tcones",
+            "title": "Cones Scored",
+            "type": "counter",
+            "defaultValue": 0,
+            "min": 0,
+            "required": false
+          },
+          {
+            "code": "tshooter",
+            "title": "Shooter?",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          },
+          {
+            "code": "tblocker",
+            "title": "Blocker?",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          },
+          {
+            "code": "twings",
+            "title": "Wings?",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          },
+          {
+            "code": "tintake",
+            "title": "Intake?",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          },
+          {
+            "code": "tqd",
+            "title": "DQ?",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "Endgame",
+        "fields": [
+          {
+            "code": "endDQ",
+            "title": "DQ?",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          },
+          {
+            "title": "Hang Tier",
+            "type": "select",
+            "required": true,
+            "code": "hang",
+            "choices": {
+              "None": "None",
+              "A": "A",
+              "B": "B",
+              "C": "C",
+              "D": "D",
+              "E": "E",
+              "F": "F",
+              "G": "G",
+              "H": "H",
+              "I": "I",
+              "J": "J"
+            },
+            "defaultValue": "None"
+          }
+        ]
+      },
+      {
+        "name": "Postmatch",
+        "fields": [
+          {
+            "code": "or",
+            "title": "Offense Skill",
+            "type": "select",
+            "choices": {
+              "1": "Vewy Bad",
+              "2": "Below Average",
+              "3": "Average",
+              "4": "Above Average",
+              "5": "Vewy Good",
+              "x": "Not Observed"
+            },
+            "required": false
+          },
+          {
+            "code": "dr",
+            "title": "Defense Skill",
+            "type": "select",
+            "choices": {
+                "1": "Vewy Bad",
+                "2": "Below Average",
+                "3": "Average",
+                "4": "Above Average",
+                "5": "Vewy Good",
+                "x": "Not Observed"
+            },
+            "defaultValue": "x",
+            "required": false
+          },
+          {
+            "code": "to",
+            "title": "Tipped Over",
+            "type": "boolean",
+            "defaultValue": false,
+            "required": false
+          },
+          {
+            "code": "co",
+            "title": "Comments",
+            "type": "text",
+            "min": 0,
+            "max": 50,
+            "required": false
+          }
+        ]
+      }
+    ]
+  }
+  

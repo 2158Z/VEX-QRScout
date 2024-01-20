@@ -1,29 +1,25 @@
 {
   "$schema": "../schema.json",
   "title": "QRScout",
-  "page_title": "Rapid React",
+  "page_title": "Charged Up",
   "sections": [
     {
       "name": "Prematch",
-      "preserveDataOnReset": true,
       "fields": [
         {
+          "code": "scouter",
           "title": "Scouter Initials",
+          "preserveDataOnReset": true,
           "type": "text",
           "required": true,
-          "code": "scouter"
+          "defaultValue": ""
         },
         {
-          "title": "Match Number",
-          "type": "number",
-          "required": true,
-          "code": "matchNumber"
-        },
-        {
+          "code": "robot",
           "title": "Robot",
+          "preserveDataOnReset": true,
           "type": "select",
           "required": true,
-          "code": "robot",
           "choices": {
             "r1": "Red 1",
             "b1": "Blue 1",
@@ -35,24 +31,25 @@
           "defaultValue": "r1"
         },
         {
-          "title": "Team Number",
+          "code": "matchNumber",
+          "title": "Match Number",
+          "preserveDataOnReset": false,
           "type": "number",
-          "required": true,
-          "code": "teamNumber"
+          "required": true
         },
         {
+          "code": "teamNumber",
+          "title": "Team Number",
+          "preserveDataOnReset": false,
+          "type": "number",
+          "required": true
+        },
+        {
+          "code": "noShow",
           "title": "No Show",
           "type": "boolean",
           "defaultValue": false,
-          "required": false,
-          "code": "noShow"
-        },
-        {
-          "title": "Using Human Player",
-          "type": "boolean",
-          "required": false,
-          "defaultValue": false,
-          "code": "humanPlayer"
+          "required": false
         }
       ]
     },
@@ -60,60 +57,54 @@
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Starting Location",
+          "code": "ahp",
+          "title": "Auton High Pieces Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "amp",
+          "title": "Auton Mid Pieces Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "afp",
+          "title": "Auton Low Pieces Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "mb",
+          "title": "Mobility Bonus",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "apu",
+          "title": "Picked Up Extra Piece",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "ade",
+          "title": "Docked/Engaged/Failed",
           "type": "select",
           "choices": {
-            "left": "Left",
-            "middle": "Middle",
-            "right": "Right"
+            "none": "None",
+            "docked": "Docked",
+            "engaged": "Docked and Engaged",
+            "failed": "Failed"
           },
-          "required": false,
-          "code": "autoStart"
-        },
-        {
-          "code": "at",
-          "title": "Taxied?",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "au",
-          "title": "Upper Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "aum",
-          "title": "Upper Cargo Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "al",
-          "title": "Lower Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "alm",
-          "title": "Lower Cargo Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "ac",
-          "title": "Picked up more cargo?",
-          "type": "boolean",
-          "defaultValue": false,
+          "defaultValue": "none",
           "required": false
         }
       ]
@@ -122,55 +113,54 @@
       "name": "Teleop",
       "fields": [
         {
-          "code": "tu",
-          "title": "Upper Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tm",
-          "title": "Upper Cargo Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tl",
-          "title": "Lower Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tn",
-          "title": "Lower Cargo Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "wd",
-          "title": "Was Defended",
+          "code": "to",
+          "title": "Tipped Over",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "cl",
-          "title": "Pick up Cargo where",
+          "code": "fpu",
+          "title": "Picked Up Pieces From Floor",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "scpu",
+          "title": "Pieces Scored on Mid/High",
           "type": "select",
           "choices": {
-            "t": "Terminal",
-            "g": "Ground",
-            "b": "Both",
-            "x": "Not Attempted"
+            "none": "None",
+            "cones": "Cones",
+            "cubes": "Cubes",
+            "both": "Both"            
           },
-          "defaultValue": "x",
+          "defaultValue": "None",
+          "required": false
+        },
+        {
+          "code": "thp",
+          "title": "Teleop High Pieces Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tmp",
+          "title": "Teleop Mid Pieces Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tfp",
+          "title": "Teleop Low Pieces Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
           "required": false
         }
       ]
@@ -179,32 +169,30 @@
       "name": "Endgame",
       "fields": [
         {
-          "code": "c",
-          "title": "Climb",
+          "code": "egp",
+          "title": "Endgame Position",
           "type": "select",
           "choices": {
-            "1": "Low",
-            "2": "Mid",
-            "3": "High",
-            "4": "Traversal",
-            "f": "Attempted but Failed",
-            "x": "Not Attempted"
+            "none": "None",
+            "park": "Parked",
+            "docked": "Docked",
+            "engaged": "Docked and Engaged"
           },
-          "defaultValue": "x",
+          "defaultValue": "none",
           "required": false
         },
         {
-          "code": "be",
-          "title": "Started climb before EndGame",
+          "code": "bb",
+          "title": "Used Its Buddy Balance",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "cn",
-          "title": "# of alliance bots climbed",
-          "type": "counter",
-          "defaultValue": 0,
+          "code": "d",
+          "title": "Died/Disabled",
+          "type": "boolean",
+          "defaultValue": false,
           "required": false
         }
       ]
@@ -213,58 +201,22 @@
       "name": "Postmatch",
       "fields": [
         {
-          "code": "ds",
-          "title": "Driver Skill",
+          "code": "pf",
+          "title": "Flagged",
           "type": "select",
           "choices": {
-            "n": "Not Effective",
-            "a": "Average",
-            "v": "Very Effective",
-            "x": "Not Observed"
+            "none": "None",
+            "yellow": "Yellow",
+            "red": "Red"
           },
-          "defaultValue": "x",
+          "defaultValue": "none",
           "required": false
         },
         {
-          "code": "dr",
-          "title": "Defense Rating",
-          "type": "select",
-          "choices": {
-            "n": "Not Effective",
-            "a": "Average",
-            "v": "Very Effective",
-            "x": "Not Observed"
-          },
-          "defaultValue": "x",
-          "required": false
-        },
-        {
-          "code": "d",
-          "title": "Died",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "to",
-          "title": "Tipped Over",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "cf",
-          "title": "Yellow/Red Card",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "co",
-          "title": "Comments",
+          "code": "notes",
+          "title": "Notes",
           "type": "text",
-          "min": 0,
-          "max": 50,
+          "defaultValue": "",
           "required": false
         }
       ]
