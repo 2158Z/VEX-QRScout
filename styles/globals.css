@@ -14,7 +14,7 @@ body {
   background-color: rgb(100, 100, 100);
 }
 
-.text-xs{
+.text-xs .text-2xl {
   color: yellow;
 }
 
