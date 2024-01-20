@@ -7,13 +7,21 @@ body {
   background-color: black;
 }
 .bg-white{
-  background-color: rgb(100, 100, 100);
+  background-color: black;
 }
 
-.bg-gray-300{
-  background-color: black;
+.bg-gray{
+  background-color: rgb(100, 100, 100);
 }
 
 .text-xs{
   color: yellow;
+}
+
+.text{
+  color: yellow;
+}
+
+.border-gray-400{
+  border-color: rgb(255 255 0/var(--tw-border-opacity));
 }
