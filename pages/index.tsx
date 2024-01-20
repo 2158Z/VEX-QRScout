@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { ChangeEvent, useEffect, useState } from 'react'
-import configJson from '../config/2024/config.json'
+import configJson from '../config/2022/config.json'
 import {
   Config,
   InputProps,
