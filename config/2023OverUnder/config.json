@@ -170,11 +170,11 @@
             "title": "Offense Skill",
             "type": "select",
             "choices": {
-              "1": "Vewy Bad",
+              "1": "Very Bad",
               "2": "Below Average",
               "3": "Average",
               "4": "Above Average",
-              "5": "Vewy Good",
+              "5": "Very Good",
               "x": "Not Observed"
             },
             "required": false
@@ -184,11 +184,11 @@
             "title": "Defense Skill",
             "type": "select",
             "choices": {
-                "1": "Vewy Bad",
+                "1": "Very Bad",
                 "2": "Below Average",
                 "3": "Average",
                 "4": "Above Average",
-                "5": "Vewy Good",
+                "5": "Very Good",
                 "x": "Not Observed"
             },
             "defaultValue": "x",
